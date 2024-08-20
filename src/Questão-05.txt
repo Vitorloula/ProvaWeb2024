@@ -1,0 +1,30 @@
+
+-> Questão 05
+
+- Explicação sobre como o uso de Contextos pode resolver o problema de Props Drilling:
+
+- Problema de Props Drilling:**
+Props Drilling ocorre quando você precisa passar dados de um componente de nível superior para um componente de nível inferior, passando por vários componentes intermediários que não precisam desses dados. Isso pode tornar o código difícil de manter e entender, pois os componentes intermediários são forçados a passar props que não utilizam.
+
+- Solução com Contextos:
+O React Context API permite que você crie um "contexto" que pode ser acessado por qualquer componente em sua árvore de componentes, sem a necessidade de passar props manualmente por cada nível intermediário. Isso resolve o problema de Props Drilling, tornando o código mais limpo e fácil de manter.
+
+- Como funciona:
+
+1. Criação do Contexto:
+   - Você cria um contexto usando `React.createContext()`. Isso cria um objeto de contexto que pode ser usado para fornecer e consumir dados.
+
+2. Provedor de Contexto:
+   - Você usa o componente `Provider` do contexto para envolver os componentes que precisam acessar os dados do contexto. O `Provider` aceita uma prop `value` que contém os dados que você deseja compartilhar.
+
+3. Consumidor de Contexto:
+   - Qualquer componente que precise acessar os dados do contexto pode usar o `Consumer` do contexto ou o hook `useContext` para obter os dados diretamente, sem a necessidade de passar props manualmente.
+
+- Benefícios:
+
+- Redução de Props Drilling: Os componentes intermediários não precisam mais passar props que não utilizam.
+- Código Mais Limpo: O código fica mais fácil de entender e manter.
+- Flexibilidade: Qualquer componente na árvore pode acessar os dados do contexto sem modificações adicionais nos componentes intermediários.
+
+- Conclusão:
+O uso de Contextos no React é uma solução eficaz para o problema de Props Drilling, permitindo que dados sejam compartilhados de forma eficiente e limpa entre componentes em diferentes níveis da árvore de componentes.
